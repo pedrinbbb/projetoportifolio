@@ -48,3 +48,41 @@ nav#menu ul{
     justify-content: end;
     padding: 12px;
 }
+main{
+    display: grid;
+    grid-template-columns: auto 90vw auto;
+    gap: 20px;
+    margin-top: 20px;
+}
+section.ficha{
+    padding: 12px;
+    border-radius: 8px;
+    background-color: var(--fundo-card);
+    grid-column: 2;
+}
+section.ficha img{
+    width: 200px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    border: 5px solid rgb(255, 255, 255);
+    outline: 5px solid var(--destaque);
+    display: block;
+    margin: auto;
+    margin-bottom: 18px;
+}
+section.ficha h1{
+    color: var(--destaque);
+    margin-bottom: 15px ;
+    font-size: 2.3em;
+    text-align: center;
+}
+div.social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7em;
+    gap: 12px;
+    margin-top: 12px;
+}
