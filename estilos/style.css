@@ -22,10 +22,17 @@
 }
 
 body{
+    scroll-behavior: smooth;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.6em;
     background-color:var(--fundo-principal);
     color: var(--texto);
+}
+nav#menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
 }
 nav#menu a{
     text-decoration: none;
@@ -50,7 +57,7 @@ nav#menu ul{
 }
 main{
     display: grid;
-    grid-template-columns: auto 90vw auto;
+    grid-template-columns: 1fr;
     gap: 20px;
     margin-top: 20px;
 }
@@ -59,6 +66,7 @@ section.ficha{
     border-radius: 8px;
     background-color: var(--fundo-card);
     grid-column: 2;
+    margin-top: 50px;
 }
 section.ficha img{
     width: 200px;
@@ -85,4 +93,137 @@ div.social{
     font-size: 1.7em;
     gap: 12px;
     margin-top: 12px;
+}
+div.social a > i{
+    color: var(--destaque);
+}
+section.detalhes{
+    grid-column: 2;
+}
+article{
+    background-color: var(--fundo-card);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+article h2{
+    color: var(--destaque);
+    margin-bottom: 20px;
+}
+div.video-container{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    aspect-ratio: 16/9;
+}
+.video-container iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+@media(min-width: 900px){
+    .video-container{
+        max-width: 60%;
+    }
+}
+.skill-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+@media(min-width: 850px){
+    .skill-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+div.info{
+    display: flex;
+    justify-content: space-between;
+    color: var(--texto);
+    font-weight: bold;
+}
+span.porcent{
+    color: var(--destaque);
+}
+div.barra{
+    width: 100%;
+    height: 10px;
+    background-color: var(--fundo-principal);
+    border-radius: 5px;
+    
+}
+div.progresso{
+    background-color: rgb(76, 138, 253);
+    height: 10px;
+    border-radius: 5px;
+}
+div.formacao-container{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 20px;
+}
+.formacao-container .curso{
+    background-color: var(--fundo-principal);
+    border-radius: 12px;
+    border-left: 5px solid var(--destaque-inverso);
+    padding: 12px;
+    transition: border-width 0.5s, border-color 0.5s;
+}
+.formacao-container .curso:hover{
+    border-left-width: 12px;
+    cursor: pointer;
+    border-color: var(--destaque);
+}
+.formacao-container .periodo{
+    font-weight: bold;
+}
+.formacao-container .instituicao{
+    color: var(--destaque-inverso);
+    font-weight: bold;
+}
+.formacao-container .titulacao{
+    font-weight: bold;
+    color: var(--texto);
+}
+.projeto-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.projeto{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--fundo-principal);
+    border-radius: 12px;
+    padding: 10px;
+    border-left: 5px solid var(--destaque-inverso);
+    transition: 0.5s;
+}
+.projeto:hover{
+    border-left: 10px solid var(--destaque);
+    cursor: pointer;
+}
+.projeto-container .foto{
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 10px;
+}
+@media (min-width: 900px){
+    .projeto-container .foto{
+        aspect-ratio: 16/9;
+        max-width: 20%;
+        max-height: 140px;
+    }
+    .projeto-container .projeto{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .projeto-container .projeto-info{
+        max-width: 80%;
+    }
 }
